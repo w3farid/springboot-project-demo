@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/")
 public class WelcomeController {
-	@GetMapping("/hello")
+	@GetMapping("")
 	public ModelAndView index() {
 		
 		return new ModelAndView("index");

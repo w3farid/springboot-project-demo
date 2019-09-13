@@ -15,6 +15,8 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
@@ -23,7 +25,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @ComponentScans(value = { @ComponentScan("com.projectdemo.controller"), @ComponentScan("com.projectdemo.model"),
 		@ComponentScan("com.projectdemo.service"), @ComponentScan("com.projectdemo.dao"),
 		@ComponentScan("com.projectdemo.util") })
-public class Config {
+public class Config implements WebMvcConfigurer{
 
 	@Value("${db.driver}")
 	private String DB_DRIVER;
@@ -86,5 +88,16 @@ public class Config {
 		resolver.setSuffix(".jsp");
 		return resolver;
 	}
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/assets/**")
+		.addResourceLocations("/WEB-INF/assets/");
+		
+		registry.addResourceHandler("/vendor/**")
+		.addResourceLocations("/WEB-INF/vendor/");
+	}
+	
+	
 
 }
