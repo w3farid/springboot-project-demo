@@ -96,6 +96,12 @@ public class Config implements WebMvcConfigurer{
 		
 		registry.addResourceHandler("/vendor/**")
 		.addResourceLocations("/WEB-INF/vendor/");
+
+		registry.addResourceHandler("/ngapp/**")
+		.addResourceLocations("/WEB-INF/ngapp/");
+
+		registry.addResourceHandler("/ngcontroller/**")
+		.addResourceLocations("/WEB-INF/ngcontroller/");
 	}
 	
 	

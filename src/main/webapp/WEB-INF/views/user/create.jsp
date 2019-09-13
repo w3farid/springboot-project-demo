@@ -13,24 +13,24 @@
                         <p class="card-category">Complete your profile</p>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form ng-app="userapp" ng-controller="userController">
                             <div class="row">
                                 <div class="col-md-5">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Company (disabled)</label>
-                                        <input type="text" class="form-control" disabled>
+                                        <label class="bmd-label-floating">Company</label>
+                                        <input type="text" class="form-control" ng-model="user.company">
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Username</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="user.username">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Email address</label>
-                                        <input type="email" class="form-control">
+                                        <input type="email" class="form-control" ng-model="user.email">
                                     </div>
                                 </div>
                             </div>
@@ -38,13 +38,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Fist Name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="user.firstName">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Last Name</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="user.lastName">
                                     </div>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Adress</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="user.address">
                                     </div>
                                 </div>
                             </div>
@@ -60,19 +60,19 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">City</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="user.city">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Country</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="user.country">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Postal Code</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control" ng-model="user.postCode">
                                     </div>
                                 </div>
                             </div>
@@ -83,13 +83,13 @@
                                         <div class="form-group">
                                             <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so
                                                 thirsty, I'm in that two seat Lambo.</label>
-                                            <textarea class="form-control" rows="5"></textarea>
+                                            <textarea class="form-control" rows="5" ng-model="user.aboutMe"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                            <div class="clearfix"></div>
+                            <button type="submit" class="btn btn-primary pull-right" ng-click="userSubmit()">Update Profile</button>
+                            <div class="clearfix">{{user.username}}</div>
                         </form>
                     </div>
                 </div>
