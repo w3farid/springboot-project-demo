@@ -60,6 +60,12 @@
               <p>User Profile</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/category">
+              <i class="material-icons">drag_indicator</i>
+              <p>Category</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

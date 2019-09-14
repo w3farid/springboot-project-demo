@@ -23,3 +23,14 @@ userapp.controller("userController", function($scope, $http){
         
     }
 });
+
+categoryapp.controller("categoryController", function($scope, $http){
+	$scope.category = {
+			categoryName: '',
+			categoryType: ''
+	};
+	
+	$scope.saveCategory = function(){
+		alert("welcome");
+	}
+});
